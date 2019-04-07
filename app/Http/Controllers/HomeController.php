@@ -23,7 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('back.users.index');
+        return view('front.users.index');
     }
 
     public function create()

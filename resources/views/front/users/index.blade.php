@@ -1,1 +1,1 @@
-Front users index
+{{dd($categories)}}
