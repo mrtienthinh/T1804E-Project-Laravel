@@ -14,3 +14,25 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+//Back site
+Route::prefix('admin')->group(function () {
+    Route::resource('post','PostController');
+    Route::resource('category','CategoryController');
+    Route::resource('user','HomeController');
+    Route::resource('tag','TagController');
+});
+//Front site
+Route::prefix('/')->group(function () {
+    Route::resource('/post','PostController');
+    Route::resource('/category','CategoryController');
+    Route::resource('/user','HomeController');
+    Route::resource('/tag','TagController');
+});
+
+
+

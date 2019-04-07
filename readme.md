@@ -6,6 +6,10 @@ Download Zip
 cmd: Composer update
 - Step 3:
 cmd: npm install
+- Step 4:
+cmd: php artisan migrate:fresh
+Step 5:
+cmd: php artisan db:seed
 - Step 4
 cmd: php artisan serve
 
