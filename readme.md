@@ -8,8 +8,8 @@ cmd: Composer update
 cmd: npm install
 - Step 4:
 cmd: php artisan migrate:fresh
-Step 5:
+- Step 5:
 cmd: php artisan db:seed
-- Step 4
+- Step 6
 cmd: php artisan serve
 
