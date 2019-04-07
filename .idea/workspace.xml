@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0986c190-f739-4d5f-b53b-77b15c2f1a30" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../app/Providers/ViewServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/../config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/../readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/front/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/front/users/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Report/Database.JPG" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,7 +45,7 @@
         <entry file="file://$PROJECT_DIR$/../app/Http/Controllers/TagController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="435">
-              <caret line="71" column="10" lean-forward="true" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="10" />
+              <caret line="71" column="10" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -66,19 +63,101 @@
         <entry file="file://$PROJECT_DIR$/../config/app.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="633">
-              <caret line="176" column="34" lean-forward="true" selection-start-line="176" selection-start-column="34" selection-end-line="176" selection-end-column="34" />
+              <caret line="176" column="34" selection-start-line="176" selection-start-column="34" selection-end-line="176" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../app/Providers/ViewServiceProvider.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="501">
+              <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+              <folding>
+                <element signature="e#33#50#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8777df07-5813-47cf-89c6-a9300b4bb136/console.sql">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="uml://DATABASE/8777df07-5813-47cf-89c6-a9300b4bb136">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>DATABASE</ID>
+              <OriginalElement>8777df07-5813-47cf-89c6-a9300b4bb136</OriginalElement>
+              <nodes>
+                <node x="842.25" y="0.0">8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.password_resets</node>
+                <node x="343.375" y="856.0">8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.comments</node>
+                <node x="0.0" y="578.0">8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.tags</node>
+                <node x="195.0" y="490.0">8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.posts</node>
+                <node x="622.25" y="0.0">8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.migrations</node>
+                <node x="358.25" y="168.0">8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.users</node>
+                <node x="380.25" y="0.0">8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.roles</node>
+                <node x="70.125" y="900.5">8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.post_tag</node>
+                <node x="163.25" y="234.0">8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.categories</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.comments" target="8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.posts">
+                  <point x="-49.5" y="-81.0" />
+                  <point x="392.875" y="831.0" />
+                  <point x="362.25" y="831.0" />
+                  <point x="55.75" y="158.0" />
+                </edge>
+                <edge source="8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.comments" target="8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.users">
+                  <point x="49.5" y="-81.0" />
+                  <point x="491.875" y="831.0" />
+                  <point x="522.5" y="831.0" />
+                  <point x="54.75" y="136.0" />
+                </edge>
+                <edge source="8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.users" target="8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.roles">
+                  <point x="0.0" y="-136.0" />
+                  <point x="0.0" y="59.0" />
+                </edge>
+                <edge source="8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.posts" target="8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.users">
+                  <point x="55.75" y="-158.0" />
+                  <point x="362.25" y="465.0" />
+                  <point x="413.0" y="465.0" />
+                  <point x="-54.75" y="136.0" />
+                </edge>
+                <edge source="8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.posts" target="8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.categories">
+                  <point x="-55.75" y="-158.0" />
+                  <point x="0.0" y="70.0" />
+                </edge>
+                <edge source="8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.post_tag" target="8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.tags">
+                  <point x="-49.5" y="-36.5" />
+                  <point x="119.625" y="831.0" />
+                  <point x="87.5" y="831.0" />
+                  <point x="0.0" y="70.0" />
+                </edge>
+                <edge source="8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.post_tag" target="8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.posts">
+                  <point x="49.5" y="-36.5" />
+                  <point x="218.625" y="831.0" />
+                  <point x="250.75" y="831.0" />
+                  <point x="-55.75" y="158.0" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="0.9" x="368.0246710141751" y="377.0935319940673" />
+              <SelectedNodes />
+              <Categories>
+                <Category>Key columns</Category>
+                <Category>Columns</Category>
+              </Categories>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../app/Providers/ViewServiceProvider.php">
+        <entry file="file://$PROJECT_DIR$/../.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="633">
-              <caret line="36" column="54" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="54" />
-              <folding>
-                <element signature="e#33#50#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="242">
+              <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -106,7 +185,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../database/seeds/RolesTableSeeder.php" />
         <option value="$PROJECT_DIR$/../database/factories/UserFactory.php" />
         <option value="$PROJECT_DIR$/../app/Category.php" />
         <option value="$PROJECT_DIR$/../app/Comment.php" />
@@ -157,6 +235,7 @@
         <option value="$PROJECT_DIR$/../config/app.php" />
         <option value="$PROJECT_DIR$/../app/Http/View/Comosers/LoadComposer.php" />
         <option value="$PROJECT_DIR$/../app/Providers/ViewServiceProvider.php" />
+        <option value="$PROJECT_DIR$/../.gitignore" />
       </list>
     </option>
   </component>
@@ -307,35 +386,13 @@
             <path>
               <item name="." type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="." type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="." type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="front" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="." type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="front" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="." type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="." type="b2602c69:ProjectViewProjectNode" />
@@ -350,7 +407,9 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -393,12 +452,12 @@
       <updated>1554431764462</updated>
       <workItem from="1554431771357" duration="3384000" />
       <workItem from="1554562534698" duration="502000" />
-      <workItem from="1554595611426" duration="13006000" />
+      <workItem from="1554595611426" duration="14891000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16892000" />
+    <option name="totallyTimeSpent" value="18777000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
@@ -417,13 +476,13 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Terminal" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" weight="0.32995737" />
+      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.22334754" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
@@ -452,31 +511,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../app/Post.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
-          <folding>
-            <element signature="e#23#41#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../app/Providers/AuthServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="25" column="34" lean-forward="true" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../resources/views/layouts/front.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-701" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../resources/views/layouts/back.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/../resources/views/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -763,7 +797,7 @@
     <entry file="file://$PROJECT_DIR$/../app/Http/Controllers/TagController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
-          <caret line="71" column="10" lean-forward="true" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="10" />
+          <caret line="71" column="10" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -797,7 +831,7 @@
     <entry file="file://$PROJECT_DIR$/../config/app.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="633">
-          <caret line="176" column="34" lean-forward="true" selection-start-line="176" selection-start-column="34" selection-end-line="176" selection-end-column="34" />
+          <caret line="176" column="34" selection-start-line="176" selection-start-column="34" selection-end-line="176" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -808,13 +842,106 @@
         </state>
       </provider>
     </entry>
+    <entry file="uml://JavaScript-modules-diagram/C:/xampp/htdocs/blog/database/migrations">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$/../database/migrations</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="698.5" y="436.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../app/Providers/ViewServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="633">
-          <caret line="36" column="54" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="54" />
+        <state relative-caret-position="501">
+          <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
           <folding>
             <element signature="e#33#50#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8777df07-5813-47cf-89c6-a9300b4bb136/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="uml://DATABASE/8777df07-5813-47cf-89c6-a9300b4bb136">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>8777df07-5813-47cf-89c6-a9300b4bb136</OriginalElement>
+          <nodes>
+            <node x="842.25" y="0.0">8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.password_resets</node>
+            <node x="343.375" y="856.0">8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.comments</node>
+            <node x="0.0" y="578.0">8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.tags</node>
+            <node x="195.0" y="490.0">8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.posts</node>
+            <node x="622.25" y="0.0">8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.migrations</node>
+            <node x="358.25" y="168.0">8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.users</node>
+            <node x="380.25" y="0.0">8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.roles</node>
+            <node x="70.125" y="900.5">8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.post_tag</node>
+            <node x="163.25" y="234.0">8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.categories</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.comments" target="8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.posts">
+              <point x="-49.5" y="-81.0" />
+              <point x="392.875" y="831.0" />
+              <point x="362.25" y="831.0" />
+              <point x="55.75" y="158.0" />
+            </edge>
+            <edge source="8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.comments" target="8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.users">
+              <point x="49.5" y="-81.0" />
+              <point x="491.875" y="831.0" />
+              <point x="522.5" y="831.0" />
+              <point x="54.75" y="136.0" />
+            </edge>
+            <edge source="8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.users" target="8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.roles">
+              <point x="0.0" y="-136.0" />
+              <point x="0.0" y="59.0" />
+            </edge>
+            <edge source="8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.posts" target="8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.users">
+              <point x="55.75" y="-158.0" />
+              <point x="362.25" y="465.0" />
+              <point x="413.0" y="465.0" />
+              <point x="-54.75" y="136.0" />
+            </edge>
+            <edge source="8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.posts" target="8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.categories">
+              <point x="-55.75" y="-158.0" />
+              <point x="0.0" y="70.0" />
+            </edge>
+            <edge source="8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.post_tag" target="8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.tags">
+              <point x="-49.5" y="-36.5" />
+              <point x="119.625" y="831.0" />
+              <point x="87.5" y="831.0" />
+              <point x="0.0" y="70.0" />
+            </edge>
+            <edge source="8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.post_tag" target="8777df07-5813-47cf-89c6-a9300b4bb136.TABLE:phpbasic.posts">
+              <point x="49.5" y="-36.5" />
+              <point x="218.625" y="831.0" />
+              <point x="250.75" y="831.0" />
+              <point x="-55.75" y="158.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.9" x="368.0246710141751" y="377.0935319940673" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Key columns</Category>
+            <Category>Columns</Category>
+          </Categories>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
         </state>
       </provider>
     </entry>
