@@ -32,4 +32,11 @@ class Post extends Model
     protected $casts = [
         'published_at' => 'datetime',
     ];
+
+    protected  $fillable = ['title','slug','excerpt','body'];
+
+    public function getRouteKey()
+    {
+        return 'slug';
+    }
 }

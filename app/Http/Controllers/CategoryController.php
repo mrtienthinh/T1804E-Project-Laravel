@@ -14,7 +14,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('back.categories.index');
+        $categories = Category::all()->toArray();
+        return view('back.categories.index')->with('categories', $categories);
     }
 
     /**
@@ -35,7 +36,12 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $category = new Category();
+        $category->title = $request->input('title');
+        $category->slug = $request->input('slug');
+        $category->save();
+
+        return back()->with('success', 'Done');;
     }
 
     /**
@@ -55,9 +61,10 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit($id)
     {
-        return view('back.categories.edit');
+        $category = Category::find($id);
+        return view('back.categories.edit')->with('category', $category);
     }
 
     /**
@@ -67,9 +74,14 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, $id)
     {
-        //
+        $category = Category::find($id);
+        $category->title = $request->get('title');
+        $category->slug = $request->get('slug');
+        $category->save();
+
+        return view('category');
     }
 
     /**
@@ -80,6 +92,8 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category = Category::find($category->id);
+        $category->delete();
+        return redirect('category');
     }
 }
