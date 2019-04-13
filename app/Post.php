@@ -24,6 +24,11 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function getDateAttribute($value)
+    {
+        return is_null($this->published_at) ? '' : $this->published_at->diffForHumans();
+    }
+
     public function scopePublished($query)
     {
         return $query->where("published_at", "<=", Carbon::now());

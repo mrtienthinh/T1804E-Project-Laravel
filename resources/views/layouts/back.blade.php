@@ -6,6 +6,7 @@
     <title>@yield('title', 'MyBlog')</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    @yield('style')
     <!-- Bootstrap 3.3.6 -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 
@@ -22,7 +23,10 @@
     <link href="{{ asset('css/skins/_all-skins.min.css') }}" rel="stylesheet">
     <link href="{{ asset('plugins/jasny-bootstrap/css/jasny-bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('plugins/simple-mde/simplemde.min.css') }}" rel="stylesheet">
-
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{{ asset('css/AdminLTE.min.css') }}">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="{{ asset('plugins/iCheck/square/blue.css') }}">
 
     {{--USELESS--}}
 
@@ -44,7 +48,7 @@
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b>T</b>B</span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>TEXT</b>BLOG</span>
+            <span class="logo-lg"><b>TECH</b>BLOG</span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top">
@@ -61,7 +65,7 @@
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <img src={{ asset('img/user2-160x160.jpg') }} class="user-image" alt="User Image">
-                            <span class="hidden-xs">Alexander Pierce</span>
+                            <span class="hidden-xs">{{\Illuminate\Support\Facades\Auth::user()->name}}</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
@@ -69,8 +73,8 @@
                                 <img src={{ asset('img/user2-160x160.jpg') }} class="img-circle" alt="User Image">
 
                                 <p>
-                                    Alexander Pierce - Web Developer
-                                    <small>Member since Nov. 2012</small>
+                                    {{\Illuminate\Support\Facades\Auth::user()->name}} - {{\Illuminate\Support\Facades\Auth::user()->role->name}}
+                                    <small>{{\Illuminate\Support\Facades\Auth::user()->created_at->diffForHumans()}}</small>
                                 </p>
                             </li>
                             <!-- Menu Footer-->
@@ -79,7 +83,10 @@
                                     <a href="#" class="btn btn-default btn-flat">Profile</a>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                    <form action="{{route('logout')}}" method="post">
+                                        {{csrf_field()}}
+                                        <button type="submit" class="btn btn-default btn-flat">Sign out</button>
+                                    </form>
                                 </div>
                             </li>
                         </ul>
@@ -98,7 +105,7 @@
                     <img src={{ asset('img/user2-160x160.jpg') }} class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    <p>Alexander Pierce</p>
+                    <p>{{\Illuminate\Support\Facades\Auth::user()->name}}</p>
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
             </div>
@@ -106,30 +113,47 @@
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu">
                 <li>
-                    <a href="#">
+                    <a href="{{route('admin.home')}}">
                         <i class="fa fa-home"></i> <span>Dashboard</span>
                     </a>
                 </li>
                 <li class="treeview">
                     <a href="#">
                         <i class="fa fa-pencil"></i>
-                        <span>Blog</span>
+                        <span>Post</span>
                         <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="{{ asset('post') }}"><i class="fa fa-circle-o"></i> All Posts</a></li>
-                        <li><a href="{{ asset('post/create') }}"><i class="fa fa-circle-o"></i> Add New</a></li>
+                        <li><a href="{{ route('admin.post.index') }}"><i class="fa fa-circle-o"></i> All Posts</a></li>
+                        <li><a href="{{ route('admin.post.create') }}"><i class="fa fa-circle-o"></i> Add New Post</a></li>
                     </ul>
                 </li>
-                <li><a href="{{asset('category')}}"><i class="fa fa-folder"></i> <span>Categories</span></a></li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-folder"></i>
+                        <span>Categories</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{ route('admin.category.index') }}"><i class="fa fa-circle-o"></i> All Categories</a></li>
+                        <li><a href="{{ route('admin.category.create') }}"><i class="fa fa-circle-o"></i> Add New Category</a></li>
+                    </ul>
+                </li>
             </ul>
         </section>
         <!-- /.sidebar -->
     </aside>
 
-    <div class="content-wrapper"">
+    <div class="content-wrapper">
+        <section class="content-header">
+            <div class="row">
+                @include('layouts.message')
+            </div>
+        </section>
         @yield('content')
     </div>
 
@@ -137,7 +161,7 @@
         <div class="pull-right hidden-xs">
             <b>Version</b> 2.3.6
         </div>
-        <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
+        <strong>Copyright &copy; 2014-2016 <a href="http://facebook.com/mrtienthinh">T1804E</a>.</strong> All rights
         reserved.
     </footer>
 
@@ -156,9 +180,25 @@
 <!-- AdminLTE App -->
 <script src={{ asset('js/app.min.js')}} ></script>
 <script src={{ asset('js/custom.js') }}></script>
-<script>
-    var simplemde1 = new SimpleMDE({ element: $("#excerpt")[0] });
-    var simplemde2 = new SimpleMDE({ element: $("#body")[0] });
+@yield('script')
+<script type="text/javascript">
+
+    $('#title').on('blur', function() {
+        var theTitle = this.value.toLowerCase().trim(),
+            slugInput = $('#slug'),
+            theSlug = theTitle.replace(/&/g, '-and-')
+                .replace(/[^a-z0-9-]+/g, '-')
+                .replace(/\-\-+/g, '-')
+                .replace(/^-+|-+$/g, '');
+
+        slugInput.val(theSlug);
+    });
+
+    $(document).ready(function () {
+        setTimeout(function(){
+            $('.alert').fadeOut(500);
+        }, 5000);
+    });
 </script>
 </body>
 </html>

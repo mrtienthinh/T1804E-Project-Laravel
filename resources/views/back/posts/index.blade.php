@@ -1,6 +1,6 @@
 @extends('layouts.back')
 
-@section('title', 'MyBlog | All Posts')
+@section('title', 'TechBlog | All Posts')
 @section('content')
     <section class="content-header">
         <h1>
@@ -8,7 +8,7 @@
             <small>All Blog Posts</small>
         </h1>
         <ol class="breadcrumb">
-            <li><i class="fa fa-dashboard"></i> <a href="#">Dashboard</a></li>
+            <li><i class="fa fa-dashboard"></i> <a href="{{ route('admin.home') }}">Dashboard</a></li>
             <li class="active">Posts</li>
         </ol>
     </section>
@@ -20,13 +20,13 @@
                 <div class="box">
                     <div class="box-header">
                         <div class="pull-left">
-                            <a id="add-button" title="Add New" class="btn btn-success" href="{{ asset('post/create') }}"><i class="fa fa-plus-circle"></i> Add New</a>
+                            <a id="add-button" title="Add New" class="btn btn-success" href="{{ route('admin.post.create') }}"><i class="fa fa-plus-circle"></i> Add New</a>
                         </div>
                         <div class="pull-right">
-                            <form accept-charset="utf-8" method="post" class="form-inline" id="form-filter" action="#">
+                            <form accept-charset="utf-8" method="get" class="form-inline" id="form-filter" action="{{ route('admin.search.post')}}">
                                 <div class="input-group">
-                                    <input type="hidden" name="search">
-                                    <input type="text" name="keywords" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search..." value="">
+                                    <input type="hidden">
+                                    <input type="text" name="key" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search..." value="">
                                     <div class="input-group-btn">
                                         <button class="btn btn-sm btn-default search-btn" type="button"><i class="fa fa-search"></i></button>
                                     </div>
@@ -50,13 +50,13 @@
                             @foreach($posts as $post)
                                 <tr>
                                     <td width="70">
-                                        <a title="Edit" class="btn btn-xs btn-default edit-row" href="{{ action('PostController@edit', $post['slug']) }}">
+                                        <a title="Edit" class="btn btn-xs btn-default edit-row" href="{{ action('Back\PostController@edit', $post->slug) }}">
                                             <i class="fa fa-edit"></i>
                                         </a>
                                         {{--<a title="Delete" class="btn btn-xs btn-danger delete-row" href="#">--}}
                                             {{--<i class="fa fa-times"></i>--}}
                                         {{--</a>--}}
-                                        <form action="{{action('PostController@destroy', $post)}}" method="post" class="btn btn-xs btn-danger delete-row" style="padding: 0">
+                                        <form action="{{action('Back\PostController@destroy', $post->slug)}}" method="post" class="btn btn-xs btn-danger delete-row" style="padding: 0">
                                             {{csrf_field()}}
                                             {{ method_field('DELETE') }}
                                             {{--<input name="_method" type="hidden" value="DELETE">--}}
@@ -64,10 +64,10 @@
                                             <button type="submit" class="btn btn-xs btn-danger"><i class="fa fa-times" ></i></button>
                                         </form>
                                     </td>
-                                    <td>{{ $post['title'] }}</td>
-                                    <td>{{ $post['user_id'] }}</td>
-                                    <td>{{ $post['category_id'] }}</td>
-                                    <td>{{ $post['published_at'] }}</td>
+                                    <td>{{ $post->title }}</td>
+                                    <td>{{ $post->user->name }}</td>
+                                    <td>{{ $post->category->title }}</td>
+                                    <td>{{ $post->date }}</td>
                                     {{--<td><abbr title="2016/12/04 6:32:00 PM">2016/12/04</abbr> | <span class="label label-info">Schedule</span></td>--}}
                                 </tr>
                             @endforeach
@@ -120,13 +120,7 @@
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer clearfix">
-                        <ul class="pagination pagination-sm no-margin pull-left">
-                            <li><a href="#">«</a></li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">»</a></li>
-                        </ul>
+                        {{$posts->render()}}
                     </div>
                 </div>
                 <!-- /.box -->
@@ -135,3 +129,10 @@
         <!-- ./row -->
     </section>
 @endsection
+
+@section('script')
+    <script type="text/javascript">
+        $('ul.pagination').addClass('no-margin pagination-sm');
+    </script>
+@endsection
+

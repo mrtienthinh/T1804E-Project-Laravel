@@ -17,21 +17,29 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
 //Back site
-Route::prefix('admin')->group(function () {
-    Route::resource('post','PostController');
-    Route::resource('category','CategoryController');
-    Route::resource('user','HomeController');
-    Route::resource('tag','TagController');
+//Route::prefix('admin')->group(function () {
+//    Route::resource('post','Back\PostController',['as' => 'admin']);
+//    Route::get('search/post','Back\PostController@searchPost')->name('search.post');
+//    Route::resource('category','Back\CategoryController');
+//    Route::resource('user','Back\HomeController');
+//    Route::resource('tag','Back\TagController');
+//});
+Route::group(['prefix'=>'admin','as'=>'admin.'], function () {
+    Route::resource('post','Back\PostController');
+    Route::get('search/post','Back\PostController@searchPost')->name('search.post');
+    Route::resource('category','Back\CategoryController');
+    Route::resource('user','Back\HomeController');
+    Route::resource('tag','Back\TagController');
+    Route::get('/','Back\HomeController@index')->name('home');
+    Route::get('/home','Back\HomeController@index')->name('home');
 });
 //Front site
 Route::prefix('/')->group(function () {
-    Route::resource('/post','PostController');
-    Route::resource('/category','CategoryController');
-    Route::resource('/user','HomeController');
-    Route::resource('/tag','TagController');
+    Route::resource('/post','Front\PostController');
+    Route::resource('/category','Front\CategoryController');
+    Route::resource('/user','Front\HomeController');
+    Route::resource('/tag','Front\TagController');
 });
 
 

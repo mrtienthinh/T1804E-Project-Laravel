@@ -1,13 +1,25 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Front;
 
 use App\Category;
+use App\Http\Controllers\Controller;
 use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+//        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,8 +27,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all()->toArray();
-        return view('back.posts.index')->with("posts", $posts);
+        $posts = Post::all();
+        return view('front.posts.index')->with("posts", $posts);
     }
 
     /**

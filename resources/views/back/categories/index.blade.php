@@ -48,10 +48,10 @@
                             @foreach($categories as $category)
                                 <tr>
                                     <td width="70">
-                                        <a title="Edit" class="btn btn-xs btn-default edit-row" href="{{ action('CategoryController@edit', $category['id']) }}">
+                                        <a title="Edit" class="btn btn-xs btn-default edit-row" href="{{ action('Back\CategoryController@edit', $category['id']) }}">
                                             <i class="fa fa-edit"></i>
                                         </a>
-                                        <form action="{{action('CategoryController@destroy', $category)}}" method="post" class="btn btn-xs btn-danger delete-row" style="padding: 0">
+                                        <form action="{{action('Back\CategoryController@destroy', $category)}}" method="post" class="btn btn-xs btn-danger delete-row" style="padding: 0">
                                             {{csrf_field()}}
                                             {{ method_field('DELETE') }}
                                             <button type="submit" class="btn btn-xs btn-danger"><i class="fa fa-times" ></i></button>

@@ -17,34 +17,18 @@
     <!-- Main content -->
     <section class="content">
         <div class="row">
-
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div><br />
-            @endif
-            @if (\Session::has('success'))
-                <div class="alert alert-success">
-                    <p>{{ \Session::get('success') }}</p>
-                </div><br />
-            @endif
-
-            <form method="post" action="{{ action('CategoryController@update', $id) }}" role = 'form'>
+            <form method="post" action="{{ action('Back\CategoryController@update', $category->id) }}" role = 'form'>
                 {{csrf_field()}}
-                <div class="col-xs-6">
+                <div class="col-xs-9">
                     <div class="box">
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="title">Category Name</label>
-                                <input name='title' type="text" class="form-control" value="{{ $category->title }}">
+                                <input id="title" name='title' type="text" class="form-control" value="{{ $category->title }}">
                             </div>
                             <div class="form-group">
                                 <label for="slug">Slug</label>
-                                <input name="slug" type="text" class="form-control" value=" {{ $category->slug }}">
+                                <input id="slug" name="slug" type="text" class="form-control" value=" {{ $category->slug }}">
                             </div>
                         </div>
                         <div class="box-footer">
