@@ -36,7 +36,15 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tag = new Tag();
+        $tag->name = $request->input('name');
+        $tag->slug = $request->input('slug');
+        if (Tag::where('slug',$tag->slug) != null){
+            $tag->slug = $request->input('slug').time();
+        }
+        $tag->save();
+
+        return back()->with('success', 'Add new tag successfully!');
     }
 
     /**

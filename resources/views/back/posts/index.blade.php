@@ -53,14 +53,9 @@
                                         <a title="Edit" class="btn btn-xs btn-default edit-row" href="{{ action('Back\PostController@edit', $post->slug) }}">
                                             <i class="fa fa-edit"></i>
                                         </a>
-                                        {{--<a title="Delete" class="btn btn-xs btn-danger delete-row" href="#">--}}
-                                            {{--<i class="fa fa-times"></i>--}}
-                                        {{--</a>--}}
                                         <form action="{{action('Back\PostController@destroy', $post->slug)}}" method="post" class="btn btn-xs btn-danger delete-row" style="padding: 0">
                                             {{csrf_field()}}
                                             {{ method_field('DELETE') }}
-                                            {{--<input name="_method" type="hidden" value="DELETE">--}}
-                                            {{--<button class="btn btn-danger" type="submit">Delete</button>--}}
                                             <button type="submit" class="btn btn-xs btn-danger"><i class="fa fa-times" ></i></button>
                                         </form>
                                     </td>

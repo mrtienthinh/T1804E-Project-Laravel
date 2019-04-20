@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Back;
 
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,12 +25,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('back.dashboard');
+//        $users = User::all()->with('roles')->latest();
+        $users = User::all()->toArray();
+        return view('back.users.index')->with('users', $users);
+
     }
 
     public function create()
     {
-        return view('front.users.create');
+        return view('back.users.create');
     }
 
     /**
@@ -51,7 +55,8 @@ class HomeController extends Controller
      */
     public function show(Post $post)
     {
-        return view('front.users.show');
+
+        return view('back.users.show');
     }
 
     /**
@@ -62,7 +67,7 @@ class HomeController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('front.users.edit');
+        return view('back.users.edit');
     }
 
     /**

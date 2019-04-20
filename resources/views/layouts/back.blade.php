@@ -128,6 +128,7 @@
                     <ul class="treeview-menu">
                         <li><a href="{{ route('admin.post.index') }}"><i class="fa fa-circle-o"></i> All Posts</a></li>
                         <li><a href="{{ route('admin.post.create') }}"><i class="fa fa-circle-o"></i> Add New Post</a></li>
+                        <li><a href="{{ route('admin.draft.posts') }}"><i class="fa fa-circle-o"></i> Deleted Post</a></li>
                     </ul>
                 </li>
                 <li class="treeview">
@@ -142,6 +143,12 @@
                         <li><a href="{{ route('admin.category.index') }}"><i class="fa fa-circle-o"></i> All Categories</a></li>
                         <li><a href="{{ route('admin.category.create') }}"><i class="fa fa-circle-o"></i> Add New Category</a></li>
                     </ul>
+                </li>
+                <li class="treeview">
+                    <a href="{{ route('admin.user.index') }}">
+                        <i class="fa fa-user"></i>
+                        <span>User</span>
+                    </a>
                 </li>
             </ul>
         </section>

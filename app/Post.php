@@ -4,10 +4,13 @@ namespace App;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\softDeletes;
 
 
 class Post extends Model
 {
+    use SoftDeletes;
+
     public function tags(){
         return $this->belongsToMany(Tag::class);
     }
@@ -44,4 +47,6 @@ class Post extends Model
     {
         return 'slug';
     }
+
+    protected $dates = ['deleted_at'];
 }

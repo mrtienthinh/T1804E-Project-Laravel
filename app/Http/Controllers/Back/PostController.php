@@ -37,29 +37,6 @@ class PostController extends Controller
         }
     }
 
-    public function searchPost()
-    {
-        $userRole = Auth::user()->role()->first()->name;
-        if ($userRole == 'isAdmin' ) {
-            $keysearch = Input::get('key');
-            $posts = Post::where('body','like','%'.$keysearch.'%')->latest()->paginate(10);
-            return view('back.posts.index')->with("posts", $posts);
-        } else {
-            return redirect('front.posts.index');
-        }
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        $categories = Category::all()->toArray();
-        return view('back.posts.create')->with("categories", $categories);
-    }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -108,6 +85,17 @@ class PostController extends Controller
 
 //        return dd($request);
         return back()->with('success', 'Add new post success!');;
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        $categories = Category::all()->toArray();
+        return view('back.posts.create')->with("categories", $categories);
     }
 
     /**
@@ -195,5 +183,23 @@ class PostController extends Controller
         $posts->delete();
         return redirect('admin/post')->with(['success','Product has been  deleted'],
             ['posts',$posts = Post::with('category', 'user')->latest()->paginate(10)]);
+    }
+
+    public function searchPost()
+    {
+        $userRole = Auth::user()->role()->first()->name;
+        if ($userRole == 'isAdmin' ) {
+            $keysearch = Input::get('key');
+            $posts = Post::where('body','like','%'.$keysearch.'%')->latest()->paginate(10);
+            return view('back.posts.index')->with("posts", $posts);
+        } else {
+            return redirect('front.posts.index');
+        }
+    }
+
+    public function draft(){
+        $drafts = Post::whereNotNull('deleted_at')->get();
+        return dd($drafts);
+//        return view('back.posts.draft')->with('drafts',$drafts);
     }
 }

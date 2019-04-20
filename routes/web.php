@@ -33,6 +33,7 @@ Route::group(['prefix'=>'admin','as'=>'admin.'], function () {
     Route::resource('tag','Back\TagController');
     Route::get('/','Back\HomeController@index')->name('home');
     Route::get('/home','Back\HomeController@index')->name('home');
+    Route::get('/draft/posts','Back\PostController@draft')->name('draft.posts');
 });
 //Front site
 Route::prefix('/')->group(function () {
