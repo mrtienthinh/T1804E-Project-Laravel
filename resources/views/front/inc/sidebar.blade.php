@@ -46,7 +46,7 @@
                     <div class="post-body">
                         <h6><a href="{{action('Front\PostController@show',$post->slug)}}" style="color: gray">{{$post->title}}</a></h6>
                         <div class="post-meta">
-                            <span><a href="{{action('Front\HomeController@show',$post->user->slug)}}">{{$post->user->name}}</a></span>
+                            <span><a href="{{$post->user_id != null ? action('Front\HomeController@show',$post->user->slug) :""}}">{{$post->user_id != null ? $post->user->name : ""}}</a></span>
                             <p>{{$post->view_count}} <i class="fa fa-eye" aria-hidden="true"></i>
                             </p>
                         </div>
