@@ -31,7 +31,7 @@ class UsersTableSeeder extends Seeder
                 'email' => "dat@dat.com",
                 'password' => bcrypt('123123'),
                 'bio' => $faker->text(rand(250, 300)),
-                'role_id' => 1,
+                'role_id' => 2,
                 'created_at' => "2018-01-01",
             ],
             [
@@ -40,7 +40,7 @@ class UsersTableSeeder extends Seeder
                 'email' => "thanh@thanh.com",
                 'password' => bcrypt('123123'),
                 'bio' => $faker->text(rand(250, 300)),
-                'role_id' => 1,
+                'role_id' => 3,
                 'created_at' => "2018-01-01",
             ],
         ]);

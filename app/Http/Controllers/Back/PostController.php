@@ -92,7 +92,7 @@ class PostController extends Controller
             }
 
             $post = new Post();
-            $post->user_id = Auth::user()->first()->id;
+            $post->user_id = Auth::user()->id;
             $post->title = $request->input('title');
             $post->slug = $request->input('slug');
             if (Post::where('slug',$post->slug) != null){
@@ -168,7 +168,7 @@ class PostController extends Controller
 
             $post = Post::where('slug', $slug)->first();
 
-            $post->user_id = Auth::user()->first()->id;
+            $post->user_id = Auth::user()->id;
             $post->title = $request->input('title');
             $post->slug = $request->input('slug');
             if (Post::where('slug',$post->slug) != null){
@@ -183,7 +183,7 @@ class PostController extends Controller
 
         if (Post::where('slug',$slug)->first() != null){
             $post = Post::where('slug', $slug)->first();
-            $post->user_id = Auth::user()->first()->id;
+            $post->user_id = Auth::user()->id;
             $post->title = $request->input('title');
             $post->slug = $request->input('slug');
             if (Post::where('slug',$post->slug)->first() != null){
