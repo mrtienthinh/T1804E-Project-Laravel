@@ -49,7 +49,7 @@ class CategoryController extends Controller
      */
     public function show($slug)
     {
-        $posts = Category::where('slug',$slug)->first()->posts()->published()->paginate(3);
+        $posts = Category::where('slug',$slug)->first()->posts()->published()->orderBy('published_at','desc')->paginate(3);
         $tags = Tag::all();
         $categories = Category::with('posts')->get();
         $postPopular = Post::orderBy('view_count','desc')->take(3)->get();
