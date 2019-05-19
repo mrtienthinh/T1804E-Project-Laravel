@@ -46,6 +46,7 @@ php artisan storage:link
 ## Login account to test
 
 | Account | Password | Type|
+| - | - | - |
 | thinh@thinh.com | 123123 | isAdmin |
 | dat@dat.com | 123123 | isAuthor |
 | thanh@thanh.com | 123123 | isUser |
